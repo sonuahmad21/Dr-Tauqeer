@@ -1,11 +1,28 @@
 {
-  "name": "shipla-by-dmta",
-  "version": "1.0.0",
-  "description": "SHIPLA by DMTA — Seemanchal Health Infrastructure Planetary Life Advancement by Dr. MD Tauqeer Ahmad",
+  "name": "shipla-patient-directory",
+  "version": "2.0.0",
   "private": true,
+  "description": "SHIPLA by DMTA — Seemanchal Health Infrastructure Planetary Life Advancement patient directory by Dr. MD Tauqeer Ahmad",
+  "type": "module",
   "scripts": {
-    "start": "npx --yes serve -l 5000",
-    "dev": "npx --yes serve -l 5000"
+    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "vite --config client/vite.config.js",
+    "build": "vite build --config client/vite.config.js",
+    "start": "NODE_ENV=production node server/index.js",
+    "seed": "node server/seed.js"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
   },
   "engines": {
     "node": ">=18"

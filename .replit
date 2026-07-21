@@ -1,10 +1,14 @@
-run = "npm start"
-entrypoint = "index.html"
+run = "npm run build && npm start"
+entrypoint = "server/index.js"
 modules = ["nodejs-20"]
 
+[nix]
+channel = "stable-24_05"
+
 [deployment]
-run = ["npm", "start"]
-deploymentTarget = "static"
+run = ["npm", "run", "start"]
+build = ["npm", "run", "build"]
+deploymentTarget = "cloudrun"
 
 [[ports]]
 localPort = 5000
