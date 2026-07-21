@@ -1,0 +1,15 @@
+run = "npm run build && npm run start"
+entrypoint = "src/app/layout.tsx"
+modules = ["nodejs-20"]
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["npm", "run", "start"]
+build = ["npm", "run", "build"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
