@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import type { PropsWithChildren } from "react";
 import { LivingEarthBackground } from "@/components/background/living-earth-background";
+import { ShiplaMark } from "@/components/brand/shipla-mark";
 import { Button } from "@/components/ui/button";
 import { OS_NAV } from "@/features/os/nav";
 import { cn, initials } from "@/lib/utils";
@@ -24,9 +25,7 @@ export function OsShell({ children }: PropsWithChildren) {
       <div className="mx-auto grid min-h-screen max-w-[1600px] lg:grid-cols-[260px_1fr]">
         <aside className="border-b border-white/10 bg-void/50 p-5 backdrop-blur-2xl lg:border-b-0 lg:border-r">
           <Link href="/" className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-emerald via-ocean to-gold">
-              <span className="h-4 w-4 rounded-full bg-void" />
-            </span>
+            <ShiplaMark size="sm" />
             <span>
               <span className="block font-display text-lg tracking-[0.08em]">SHIPLA</span>
               <span className="text-[10px] uppercase tracking-[0.18em] text-ivory-dim">

@@ -15,9 +15,9 @@ const config: Config = {
           panel: "#0f1714",
         },
         forest: {
-          DEFAULT: "#0d3b2e",
-          deep: "#082820",
-          mist: "#145c45",
+          DEFAULT: "#003322",
+          deep: "#001a12",
+          mist: "#0d5c45",
         },
         emerald: {
           DEFAULT: "#10b981",

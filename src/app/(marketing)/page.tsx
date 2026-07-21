@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 import { GlassCard } from "@/components/ui/glass-card";
 import { PageShell, SectionHeading } from "@/components/ui/section-heading";
+import { FOUNDER, GROWTH_PATH, VISION_PHASES } from "@/features/vision/content";
 
 const features = [
   {
@@ -69,16 +70,21 @@ export default function LandingPage() {
               SHIPLA
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-ivory-muted md:text-xl">
-              Seemanchal Health Infrastructure & Planetary Life Advancement — an AI-powered
-              Healthcare Operating System for life, science, and civilization.
+              {FOUNDER.fullName} — an AI-powered Healthcare Operating System for life, science,
+              and civilization.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link href="/login">
                 <Button size="lg">Enter HealthOS</Button>
               </Link>
-              <a href="#features">
+              <Link href="/profile">
+                <Button size="lg" variant="gold">
+                  Founder Profile
+                </Button>
+              </Link>
+              <a href="#vision-path">
                 <Button size="lg" variant="ghost">
-                  Explore the system
+                  Vision Path
                 </Button>
               </a>
             </div>
@@ -145,6 +151,38 @@ export default function LandingPage() {
               {item}
             </GlassCard>
           ))}
+        </div>
+      </PageShell>
+
+      <PageShell id="vision-path">
+        <SectionHeading
+          eyebrow="Long-Term Vision Path"
+          title="Twelve phases. One path. Limitless impact."
+          description={FOUNDER.vision}
+        />
+        <div className="mt-8 grid gap-3 md:grid-cols-3">
+          {GROWTH_PATH.map((step) => (
+            <GlassCard key={step.id} className="p-5" hover>
+              <p className="font-display text-2xl tracking-[0.12em] text-gold-soft">{step.label}</p>
+              <p className="mt-2 text-sm text-ivory-muted">{step.copy}</p>
+            </GlassCard>
+          ))}
+        </div>
+        <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {VISION_PHASES.slice(0, 6).map((item) => (
+            <GlassCard key={item.phase} className="p-5">
+              <p className="text-xs uppercase tracking-[0.16em] text-gold-soft">
+                Phase {String(item.phase).padStart(2, "0")}
+              </p>
+              <h3 className="mt-2 font-display text-xl text-ivory">{item.title}</h3>
+              <p className="mt-2 text-sm text-ivory-muted">{item.copy}</p>
+            </GlassCard>
+          ))}
+        </div>
+        <div className="mt-6">
+          <Link href="/profile">
+            <Button variant="ghost">View full founder profile & all 12 phases</Button>
+          </Link>
         </div>
       </PageShell>
 

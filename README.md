@@ -33,6 +33,7 @@ npm start
 | Route | Purpose |
 |-------|---------|
 | `/` | Living Earth landing |
+| `/profile` | Founder Profile Patency — Dr. MD Tauqeer Ahmad vision board |
 | `/login` | Premium glass login + role selection |
 | `/os` | HealthOS command center |
 | `/os/patient` | Patient module |
