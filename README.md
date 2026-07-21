@@ -1,51 +1,70 @@
-# SHIPLA Patient Directory
+# SHIPLA HealthOS
 
-**SHIPLA by DMTA**  
-Seemanchal Health Infrastructure · Planetary Life Advancement  
-by **Dr. MD Tauqeer Ahmad**
+**Seemanchal Health Infrastructure & Planetary Life Advancement**  
+Version 1.0 · by **Dr. MD Tauqeer Ahmad / DMTA**
 
-Modern clinical patient directory upgraded from the Replit Patient Directory app  
-(`https://doctor-patient-log--tauqeersam.replit.app`).
+This is not a hospital website.  
+It is a **Healthcare Operating System (HealthOS)** foundation.
 
-## Features
+## Stack
 
-- Animated planetary / health-network background
-- SHIPLA branding for Dr. MD Tauqeer Ahmad
-- Dashboard with stats, demographics, and recent patients
-- Searchable patient directory with gender / blood-type filters
-- Create, view, edit, and delete patient records
-- Local JSON persistence (`data/patients.json`) — demo seed only (no real PHI)
+- Next.js (App Router) + React + TypeScript
+- Tailwind CSS + Framer Motion-ready UI
+- Zustand auth store (role-aware demo session)
+- Prisma schema for PostgreSQL (users, RBAC, audit, orgs)
+- Feature-based architecture under `src/`
 
 ## Quick start
 
 ```bash
 npm install
-npm run seed
 npm run dev
 ```
 
-- API + production server: `http://localhost:5000`
-- Vite client (dev): `http://localhost:5173` (proxies `/api`)
-
-## Production / Replit
+Open [http://localhost:3000](http://localhost:3000).
 
 ```bash
-npm install
-npm run seed
 npm run build
 npm start
 ```
 
-Replit uses `.replit` to build the Vite client and serve it from Express on port `5000`.
+## Surfaces
 
-## API
+| Route | Purpose |
+|-------|---------|
+| `/` | Living Earth landing |
+| `/login` | Premium glass login + role selection |
+| `/os` | HealthOS command center |
+| `/os/patient` | Patient module |
+| `/os/doctor` | Doctor module |
+| `/os/hospital` | Hospital module |
+| `/os/ai` | AI Fabric |
+| `/os/research` | Research |
+| `/os/education` | Education |
+| `/os/planetary` | Planetary Health |
+| `/os/space` | Space Medicine |
+| `/os/admin` | Administrator / developer |
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/api/patients` | List (`search`, `gender`, `bloodType` query params) |
-| GET | `/api/patients/stats` | Totals and demographics |
-| GET | `/api/patients/recent` | Latest records |
-| GET | `/api/patients/:id` | Single record |
-| POST | `/api/patients` | Create |
-| PATCH | `/api/patients/:id` | Update |
-| DELETE | `/api/patients/:id` | Delete |
+## Architecture
+
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+
+## Database
+
+Prisma schema lives in `prisma/schema.prisma`.
+
+```bash
+# requires DATABASE_URL
+npm run db:generate
+npm run db:push
+```
+
+Demo auth currently uses a local persisted session (Zustand) so the OS is explorable without cloud credentials. Wire OAuth/Supabase using the same `UserRole` model when ready.
+
+## Quality
+
+```bash
+npm run lint
+npm run typecheck
+npm test
+```

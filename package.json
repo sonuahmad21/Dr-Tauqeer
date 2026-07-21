@@ -1,28 +1,45 @@
 {
-  "name": "shipla-patient-directory",
-  "version": "2.0.0",
+  "name": "shipla-healthos",
+  "version": "1.0.0",
   "private": true,
-  "description": "SHIPLA by DMTA — Seemanchal Health Infrastructure Planetary Life Advancement patient directory by Dr. MD Tauqeer Ahmad",
-  "type": "module",
+  "description": "SHIPLA — Seemanchal Health Infrastructure & Planetary Life Advancement. AI-powered Healthcare Operating System.",
   "scripts": {
-    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
-    "dev:server": "node --watch server/index.js",
-    "dev:client": "vite --config client/vite.config.js",
-    "build": "vite build --config client/vite.config.js",
-    "start": "NODE_ENV=production node server/index.js",
-    "seed": "node server/seed.js"
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p ${PORT:-3000}",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "test": "node --import tsx --test tests/unit/*.test.ts",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "concurrently": "^9.1.2",
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.1"
+    "@prisma/client": "^6.19.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.42.2",
+    "lucide-react": "^1.25.0",
+    "next": "^15.5.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.11"
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.0",
+    "postcss": "^8",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "prisma": "^6.19.3",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.23.1",
+    "typescript": "^5"
   },
   "engines": {
     "node": ">=18"
