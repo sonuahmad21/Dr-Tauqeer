@@ -1,0 +1,11 @@
+run = "npm start"
+entrypoint = "index.html"
+modules = ["nodejs-20"]
+
+[deployment]
+run = ["npm", "start"]
+deploymentTarget = "static"
+
+[[ports]]
+localPort = 5000
+externalPort = 80

@@ -1,0 +1,13 @@
+{
+  "name": "shipla-by-dmta",
+  "version": "1.0.0",
+  "description": "SHIPLA by DMTA — Seemanchal Health Infrastructure Planetary Life Advancement by Dr. MD Tauqeer Ahmad",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve -l 5000",
+    "dev": "npx --yes serve -l 5000"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
