@@ -91,9 +91,18 @@ export default function LandingPage() {
           </div>
         </FadeIn>
 
-        <p className="mt-16 max-w-2xl text-sm uppercase tracking-[0.2em] text-ivory-dim">
-          {FOUNDER.tagline}
-        </p>
+        <div className="mt-16 grid gap-4 md:grid-cols-3">
+          {[
+            ["HealthOS", "Not a hospital website — a complete operating layer for care."],
+            ["Living Earth", "Nature, aurora, intelligence — the visual language of life."],
+            ["DMTA", "Led by Dr. MD Tauqeer Ahmad for Seemanchal and planetary futures."],
+          ].map(([title, copy]) => (
+            <GlassCard key={title} className="glass-edge p-6" hover>
+              <h3 className="font-display text-2xl text-ivory">{title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ivory-muted">{copy}</p>
+            </GlassCard>
+          ))}
+        </div>
       </PageShell>
 
       <PageShell id="features">
