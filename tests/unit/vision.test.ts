@@ -10,6 +10,7 @@ import {
 describe("SHIPLA vision board content", () => {
   it("encodes the founder quote and Seemanchal vision", () => {
     assert.equal(FOUNDER.quote, "Just make it exist first. You can make it good later.");
+    assert.equal(FOUNDER.motto, "Healing Today, Inspiring Tomorrow");
     assert.match(FOUNDER.vision, /Seemanchal/);
     assert.equal(FOUNDER.tagline, "ONE VISION. ONE PATH. LIMITLESS IMPACT.");
     assert.equal(FOUNDER.pillars.length, 3);

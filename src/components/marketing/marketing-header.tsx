@@ -7,12 +7,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/profile", label: "Profile" },
-  { href: "/#features", label: "Features" },
-  { href: "/#ecosystem", label: "Ecosystem" },
-  { href: "/#vision-path", label: "Vision Path" },
-  { href: "/#planetary", label: "Planetary" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#vision", label: "Vision" },
+  { href: "/#growth", label: "Growth" },
+  { href: "/#vision-path", label: "Path" },
+  { href: "/#purpose", label: "Purpose" },
+  { href: "/profile", label: "Founder" },
 ];
 
 export function MarketingHeader() {
@@ -26,7 +25,7 @@ export function MarketingHeader() {
           <span className="leading-none">
             <span className="block font-display text-xl tracking-[0.08em] text-ivory">SHIPLA</span>
             <span className="mt-1 block text-[10px] uppercase tracking-[0.2em] text-ivory-dim">
-              HealthOS · DMTA
+              Healing · Inspiring
             </span>
           </span>
         </Link>
@@ -50,13 +49,8 @@ export function MarketingHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/profile">
-            <Button variant="ghost" size="sm">
-              Founder
-            </Button>
-          </Link>
-          <Link href="/login" className="hidden sm:block">
-            <Button size="sm">Launch HealthOS</Button>
+          <Link href="/login">
+            <Button size="sm">Enter Dashboard</Button>
           </Link>
         </div>
       </div>

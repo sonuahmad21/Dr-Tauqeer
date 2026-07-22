@@ -17,26 +17,26 @@ const sans = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "SHIPLA HealthOS",
+    default: "SHIPLA · Healing Today, Inspiring Tomorrow",
     template: "%s · SHIPLA",
   },
   description:
-    "Seemanchal Health Infrastructure & Planetary Life Advancement — an AI-powered Healthcare Operating System by Dr. MD Tauqeer Ahmad / DMTA.",
+    "Seemanchal Health Infrastructure & Planetary Life Advancement — a non-profit healthcare, education, and innovation ecosystem by Dr. MD Tauqeer Ahmad / DMTA.",
   applicationName: "SHIPLA",
   keywords: [
     "SHIPLA",
     "HealthOS",
     "Seemanchal",
     "Planetary Health",
-    "AI Doctor",
+    "Non-profit",
     "DMTA",
     "Dr MD Tauqeer Ahmad",
   ],
   authors: [{ name: "DMTA" }],
   openGraph: {
-    title: "SHIPLA HealthOS",
+    title: "SHIPLA · Healing Today, Inspiring Tomorrow",
     description:
-      "The operating system for human and planetary health — Seemanchal to the stars.",
+      "One vision. One path. Limitless impact — healthcare and human development for Seemanchal.",
     type: "website",
   },
 };
