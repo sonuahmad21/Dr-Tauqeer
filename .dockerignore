@@ -1,0 +1,14 @@
+.dockerignore
+.git
+.github
+.husky
+.turbo
+**/.next
+**/node_modules
+**/dist
+**/.env
+**/.env.*
+!**/.env.example
+docker-data
+*.md
+LICENSE

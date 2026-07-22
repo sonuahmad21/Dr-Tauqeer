@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  SHIPLA design tokens — green + gold, dark-first.
+  Light mode tokens are available via :root without .dark.
+*/
+@layer base {
+  :root {
+    --background: 150 20% 98%;
+    --foreground: 160 40% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 40% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 40% 8%;
+
+    --primary: 158 64% 28%;
+    --primary-foreground: 150 30% 98%;
+
+    --secondary: 150 15% 92%;
+    --secondary-foreground: 160 30% 16%;
+
+    --muted: 150 12% 94%;
+    --muted-foreground: 160 10% 40%;
+
+    --accent: 150 18% 92%;
+    --accent-foreground: 160 30% 16%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 150 12% 86%;
+    --input: 150 12% 86%;
+    --ring: 158 64% 28%;
+
+    --gold: 43 65% 52%;
+    --gold-foreground: 40 40% 10%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 160 25% 4%;
+    --foreground: 150 20% 96%;
+
+    --card: 160 20% 7%;
+    --card-foreground: 150 20% 96%;
+
+    --popover: 160 20% 7%;
+    --popover-foreground: 150 20% 96%;
+
+    --primary: 158 64% 42%;
+    --primary-foreground: 160 40% 6%;
+
+    --secondary: 160 18% 12%;
+    --secondary-foreground: 150 20% 92%;
+
+    --muted: 160 16% 12%;
+    --muted-foreground: 150 10% 65%;
+
+    --accent: 160 18% 14%;
+    --accent-foreground: 150 20% 96%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 160 14% 16%;
+    --input: 160 14% 16%;
+    --ring: 158 64% 42%;
+
+    --gold: 43 65% 52%;
+    --gold-foreground: 40 40% 10%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
