@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SeemanchalAtmosphere } from "@/components/background/seemanchal-atmosphere";
 import { ShiplaMark } from "@/components/brand/shipla-mark";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -14,26 +15,18 @@ import { VisionIcon } from "@/features/vision/icons";
 export default function LandingPage() {
   return (
     <>
-      {/* Hero — one composition: brand, motto, sentence, CTAs, living earth */}
-      <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pb-16 pt-28 md:justify-center md:pb-24 md:pt-24">
+      {/* Hero — one composition: brand, motto, sentence, CTAs, Seemanchal plane */}
+      <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pb-20 pt-28 md:justify-center md:pb-28 md:pt-24">
+        <SeemanchalAtmosphere />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(212,175,55,0.14),transparent_50%),radial-gradient(ellipse_at_80%_70%,rgba(16,185,129,0.12),transparent_45%)]"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-[42vh] bg-gradient-to-t from-void via-void/70 to-transparent"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,rgba(212,175,55,0.16),transparent_48%),radial-gradient(ellipse_at_85%_55%,rgba(16,185,129,0.1),transparent_42%)]"
         />
 
         <PageShell className="relative z-10 py-0">
           <FadeIn>
             <div className="max-w-5xl">
-              <div className="mb-8 flex items-center gap-4 md:mb-10">
-                <ShiplaMark size="lg" className="animate-float" />
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-soft">
-                  {FOUNDER.org} · {FOUNDER.legalForm}
-                </p>
-              </div>
+              <ShiplaMark size="lg" className="mb-8 animate-float md:mb-10" />
 
               <h1 className="font-display text-[clamp(4.2rem,14vw,9.5rem)] leading-[0.86] tracking-[-0.045em] text-ivory">
                 SHIPLA
