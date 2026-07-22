@@ -5,10 +5,12 @@ export const FOUNDER = {
   initiative: "SHIPLA",
   fullName:
     "Seemanchal Health Infrastructure & Planetary Life Advancement",
+  motto: "Healing Today, Inspiring Tomorrow",
   quote: "Just make it exist first. You can make it good later.",
   vision:
     "To build a self-sustaining healthcare, education, and innovation ecosystem that transforms Seemanchal through compassionate care, economic empowerment, technology, and human development.",
   tagline: "ONE VISION. ONE PATH. LIMITLESS IMPACT.",
+  legalForm: "Non-profit organisation",
   pillars: [
     {
       id: "healing",
