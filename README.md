@@ -1,71 +1,68 @@
-# SHIPLA HealthOS
+# SHIPLA Monorepo
 
-**Seemanchal Health Infrastructure & Planetary Life Advancement**  
-Version 1.0 · by **Dr. MD Tauqeer Ahmad / DMTA**
-
-This is not a hospital website.  
-It is a **Healthcare Operating System (HealthOS)** foundation.
+Production-grade foundation for **Seemanchal Health Infrastructure & Planetary Life Advancement**.
 
 ## Stack
 
-- Next.js (App Router) + React + TypeScript
-- Tailwind CSS + Framer Motion-ready UI
-- Zustand auth store (role-aware demo session)
-- Prisma schema for PostgreSQL (users, RBAC, audit, orgs)
-- Feature-based architecture under `src/`
+| Layer    | Choice                                              |
+| -------- | --------------------------------------------------- |
+| Apps     | Next.js 15 (App Router) · TypeScript · Tailwind CSS |
+| Monorepo | Turborepo · pnpm workspaces                         |
+| UI       | Shadcn UI · Framer Motion · next-themes (dark mode) |
+| Theme    | SHIPLA green + gold                                 |
+| Data     | PostgreSQL · Prisma                                 |
+| Quality  | ESLint · Prettier · Husky · lint-staged             |
+| Ops      | Docker · GitHub Actions                             |
+
+## Structure
+
+```
+apps/web                 Next.js application (init only — no app pages yet)
+packages/ui              Shadcn UI primitives + SHIPLA theme tokens
+packages/database        Prisma schema + client
+packages/eslint-config   Shared ESLint flat configs
+packages/typescript-config
+```
 
 ## Quick start
 
 ```bash
-npm install
-npm run dev
+pnpm install
+cp .env.example .env
+docker compose up -d postgres
+pnpm db:generate
+pnpm db:push
+pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+App: [http://localhost:3000](http://localhost:3000)
+
+## Scripts
+
+| Command            | Description                     |
+| ------------------ | ------------------------------- |
+| `pnpm dev`         | Start all `dev` tasks via Turbo |
+| `pnpm build`       | Production build                |
+| `pnpm lint`        | Lint all packages               |
+| `pnpm typecheck`   | TypeScript across the monorepo  |
+| `pnpm format`      | Prettier write                  |
+| `pnpm db:generate` | Prisma generate                 |
+| `pnpm db:push`     | Push schema to Postgres         |
+
+## Environment
+
+See `.env.example`. Never commit `.env`.
+
+## Docker
 
 ```bash
-npm run build
-npm start
+# Local Postgres
+docker compose up -d
+
+# Production web image (after lockfile exists)
+docker build -t shipla-web .
 ```
 
-## Surfaces
+## Note
 
-| Route | Purpose |
-|-------|---------|
-| `/` | Living Earth landing |
-| `/profile` | Founder Profile Patency — Dr. MD Tauqeer Ahmad vision board |
-| `/login` | Premium glass login + role selection |
-| `/os` | HealthOS command center |
-| `/os/patient` | Patient module |
-| `/os/doctor` | Doctor module |
-| `/os/hospital` | Hospital module |
-| `/os/ai` | AI Fabric |
-| `/os/research` | Research |
-| `/os/education` | Education |
-| `/os/planetary` | Planetary Health |
-| `/os/space` | Space Medicine |
-| `/os/admin` | Administrator / developer |
-
-## Architecture
-
-See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
-
-## Database
-
-Prisma schema lives in `prisma/schema.prisma`.
-
-```bash
-# requires DATABASE_URL
-npm run db:generate
-npm run db:push
-```
-
-Demo auth currently uses a local persisted session (Zustand) so the OS is explorable without cloud credentials. Wire OAuth/Supabase using the same `UserRole` model when ready.
-
-## Quality
-
-```bash
-npm run lint
-npm run typecheck
-npm test
-```
+This commit is **project initialization only**. Application pages will be added next.
